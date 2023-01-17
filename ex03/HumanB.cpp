@@ -1,40 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombie.hpp                                         :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahsalem <ahsalem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/16 06:23:32 by ahsalem           #+#    #+#             */
-/*   Updated: 2023/01/16 13:20:42 by ahsalem          ###   ########.fr       */
+/*   Created: 2023/01/16 14:36:46 by ahsalem           #+#    #+#             */
+/*   Updated: 2023/01/16 16:06:43 by ahsalem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
-# include <iostream>
-# include <string>
-#include <iostream>
+#include "HumanB.hpp"
 
-class Zombie
+void	HumanB::attack()
 {
-	public:
-		Zombie();
-		Zombie(std::string input)
-		{
-			name = input;
-		}
-		~Zombie()
-		{
-			std::cout << "Destroying zombie " << name <<  std::endl;
-		};
+	std::cout << HumanB::name << "  attacks with their ";
+	if (HumanB::tool != NULL)
+		std::cout << HumanB::tool->getType() << std::endl;
+	else
+		std::cout << std::endl;
+}
 
-		void announce(void);
-		
-	private:
-		std::string	name;
-};
+void	HumanB::setWeapon(Weapon *input)
+{
+	HumanB::tool = input;
+}
 
-Zombie	*newZombie(std::string name);
-void	randomChump(std::string name);
-#endif
+void	HumanB::setName(std::string given_name)
+{
+	HumanB::name = given_name;
+}

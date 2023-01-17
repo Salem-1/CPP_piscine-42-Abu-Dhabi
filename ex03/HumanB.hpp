@@ -1,42 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombie.hpp                                         :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahsalem <ahsalem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/16 06:23:32 by ahsalem           #+#    #+#             */
-/*   Updated: 2023/01/16 13:20:24 by ahsalem          ###   ########.fr       */
+/*   Created: 2023/01/16 14:55:50 by ahsalem           #+#    #+#             */
+/*   Updated: 2023/01/16 16:05:39 by ahsalem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
-# include <iostream>
-# include <string>
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
+#include "HumanA.hpp"
 
-class Zombie
+class HumanB
 {
 	public:
-		Zombie(){}
-		Zombie(std::string input)
+		HumanB(std::string given_name)
 		{
-			name = input;
-		}
-		~Zombie()
-		{
-			std::cout << "Destroying zombie " << name <<  std::endl;
+			setName(given_name);
+			tool = NULL;
 		};
-		void	set_name(std::string your_name);
-		void	announce(void);
-		
+		~HumanB(){
+			std::cout << "Destroing " << name << std::endl;
+		};
+		void	setWeapon(Weapon *input);
+		void	setName(std::string given_name);
+		void	attack();
 	private:
 		std::string	name;
+		Weapon		*tool;
 };
-
-
-Zombie	*newZombie(std::string name);
-void	randomChump(std::string name);
-Zombie	*zombieHorde(int N, std::string name);
-
 #endif

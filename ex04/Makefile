@@ -1,5 +1,5 @@
-NAME = violance
-SRC = HumanA.cpp  HumanB.cpp  Weapon.cpp   main.cpp
+NAME = sed
+SRC = main.cpp  sed.cpp
 CXXFLAGS= -Wall -Wextra -Werror -std=c++98
 CXX = c++ 
 OBJ =  $(SRC:.cpp=.o)

@@ -1,40 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombie.hpp                                         :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahsalem <ahsalem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/16 06:23:32 by ahsalem           #+#    #+#             */
-/*   Updated: 2023/01/16 13:20:42 by ahsalem          ###   ########.fr       */
+/*   Created: 2023/01/16 14:36:46 by ahsalem           #+#    #+#             */
+/*   Updated: 2023/01/16 16:20:29 by ahsalem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
-# include <iostream>
-# include <string>
-#include <iostream>
+#include "HumanA.hpp"
 
-class Zombie
+void	HumanA::attack()
 {
-	public:
-		Zombie();
-		Zombie(std::string input)
-		{
-			name = input;
-		}
-		~Zombie()
-		{
-			std::cout << "Destroying zombie " << name <<  std::endl;
-		};
+	std::cout << HumanA::name << "  attacks with their " 
+		<< HumanA::tool.getType() << std::endl;
+	// <name> attacks with their <weapon type>
+}
 
-		void announce(void);
-		
-	private:
-		std::string	name;
-};
-
-Zombie	*newZombie(std::string name);
-void	randomChump(std::string name);
-#endif
+void	HumanA::setName(std::string given_name)
+{
+	HumanA::name = given_name;
+}
