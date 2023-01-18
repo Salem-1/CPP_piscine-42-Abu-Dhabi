@@ -1,5 +1,5 @@
-NAME = zombie
-SRC = zombie.cpp main.cpp
+NAME = fixed
+SRC = fixed.cpp main.cpp
 CFLAGS= -Wall -Wextra -Werror -std=c++98
 CC = c++ 
 OBJ =  $(SRC:.cpp=.o)
@@ -14,6 +14,6 @@ clean:
 	@rm -rf *.o
 
 fclean: clean
-	@rm -rf zombie
+	@rm -rf $(NAME)
 
 re: fclean all 
