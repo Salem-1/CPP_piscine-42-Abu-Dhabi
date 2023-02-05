@@ -14,19 +14,20 @@
 # define EASYFIND_HPP
 # include <iostream>
 # include <algorithm>
-template <typename T>
-T easyfind(T a, int b);
+#include <vector>
 
-//find the first occurance of the second parameter in the first parameter
+template <typename T>
+typename T::iterator easyfind(T a, int b)
+{
+	typename T::iterator it;
+	it = std::find(a.begin(), a.end(), b);
+	if (it == a.end())
+		throw (std::exception());
+	return (it);
+	// return(a.find(b));
+}
+
+// //find the first occurance of the second parameter in the first parameter
 #endif
 
 
-T easyfind(T a, int b)
-{
-	T::iterator it = a.begin();
-		it == b
-		
-	++it;
-	rend / rbegi
-	a.end();1
-}
