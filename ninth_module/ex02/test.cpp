@@ -11,9 +11,9 @@ int main()
 	d.pop_back();
 	d.push_back(2);
 	
-	std::::iterator<int> it;
+	std::deque<int>::iterator it;
 	it = d.begin();
-	std::cout << d[1] << std::endl;
+	std::cout << *it << std::endl;
 
 	return (0);
 }
