@@ -36,15 +36,6 @@ class MutantStack : public std::deque<T>
 		void	swap(MutantStack *obj2);
 		bool	empty() const;
 		void	emplace(T);
-		// class iterator
-		// {
-		// 	public:
-		// 		iterator(){};
-		// 		~iterator(){};
-		// 		// iterator
-		// 		std::iterator<T> it;
-		// };
-		// static T *iterator;
 	private:
 		std::deque<T>	capsule;
 };
