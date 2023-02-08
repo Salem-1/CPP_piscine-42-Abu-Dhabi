@@ -6,12 +6,17 @@
 # include <algorithm>
 # include <list>
 # include <deque>
+# include <stack>
 
 template <typename T>
-class MutantStack
+class MutantStack : public std::deque<T>
 {
 	public:
+		typedef typename std::deque<T>::iterator iterator;
 		MutantStack(){};
+		MutantStack(MutantStack const &obj2){
+			*this = obj2;
+		};
 		~MutantStack(){};
 		MutantStack &operator= (MutantStack const &obj2)
 		{
@@ -26,10 +31,10 @@ class MutantStack
 		T		top(void);
 		void	pop(void);
 		int		size(void);
-		T		*begin();
-		T		*end();
-		bool	empty() const;
+		iterator		begin();
+		iterator		end();
 		void	swap(MutantStack *obj2);
+		bool	empty() const;
 		void	emplace(T);
 		// class iterator
 		// {
@@ -83,12 +88,12 @@ T	MutantStack<T>::top()
 	return (capsule.back());
 };
 template <typename T>
-T	*MutantStack<T>::begin()
+typename MutantStack<T>::iterator MutantStack<T>::begin()
 {
 	return (capsule.begin());
 };
 template <typename T>
-T	*MutantStack<T>::end()
+typename MutantStack<T>::iterator MutantStack<T>::end()
 {
 	return (capsule.end());
 };

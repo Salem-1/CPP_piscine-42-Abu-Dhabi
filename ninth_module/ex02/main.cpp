@@ -17,18 +17,18 @@ int main(void)
 	MutantStack<int> other_stack;
 	other_stack.swap(&mstack);
 	std::cout << "stack is_empty " << mstack.empty() << std::endl;
-	
-	// MutantStack<int>::iterator it = mstack.begin();
-	// MutantStack<int>::iterator ite = mstack.end();
-	// ++it;
-	// --it;
-	// while (it != ite)
-	// {
-	// std::cout << *it << std::endl;
-	// ++it;
-	// }
-	// std::stack<int> s(mstack);
-	// return 0;
+	mstack.swap(&other_stack);
+	MutantStack<int>::iterator it = mstack.begin();
+	MutantStack<int>::iterator ite = mstack.end();
+	++it;
+	--it;
+	while (it != ite)
+	{
+		std::cout << *it << std::endl;
+		++it;
+	}
+	std::stack<int> s(mstack);
+	return 0;
 }
 // int main(void)
 // {
