@@ -24,10 +24,7 @@ typename T::iterator easyfind(T a, int b)
 	if (it == a.end())
 		throw (std::exception());
 	return (it);
-	// return(a.find(b));
 }
-
-// //find the first occurance of the second parameter in the first parameter
 #endif
 
 
