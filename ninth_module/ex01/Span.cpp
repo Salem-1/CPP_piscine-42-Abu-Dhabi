@@ -67,6 +67,7 @@ int	Span::longestSpan()
 	return (a[counter - 1] - a[0]); 
 };
 
+//search filling this with ready made range iterator filler
 void Span::fill_with_iter(
 	std::vector<int>::iterator start, std::vector<int>::iterator end)
 {
